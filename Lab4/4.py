@@ -1,12 +1,13 @@
-#Лаб4, завд4, Карпенко Ю.О., ЗПІ-18
-#Написати програму для кубічних рівнянь
+# Дяченко В.В., ЗПІ-18
+# Написати програму для кубічних рівнянь
 
-input = open('input4.txt', 'r') #відкриття файлу з вхідними даними
-output = open('output4.txt', 'w') #відкриття порожнього файлу, куди буде надіслано результат
+input = open('input4.txt', 'r')  # відкриття файлу з вхідними даними
+# відкриття порожнього файлу, куди буде надіслано результат
+output = open('output4.txt', 'w')
 
-U = input.read().split() #зчитування та заповнення масиву
+U = input.read().split()  # зчитування та заповнення масиву
 for i in range(4):
-    U[i] = int(U[i]) #зміна типу елементів масиву
+    U[i] = int(U[i])  # зміна типу елементів масиву
 k_a = U[0]
 k_b = U[1]
 k_c = U[2]
@@ -50,8 +51,10 @@ elif s < 0:
             res = str(round(x1)) + " " + str(round(x2)) + " " + str(round(x3))
         else:
             x1 = 2 * sqrt(q) * cosh(f) - a / 3
-            x2 = -1 * sqrt(q) * cosh(f) - a / 3 + 1j * sqrt(3) * sqrt(q) * sinh(f)
-            x3 = -1 * sqrt(q) * cosh(f) - a / 3 - 1j * sqrt(3) * sqrt(q) * sinh(f)
+            x2 = -1 * sqrt(q) * cosh(f) - a / 3 + 1j * \
+                sqrt(3) * sqrt(q) * sinh(f)
+            x3 = -1 * sqrt(q) * cosh(f) - a / 3 - 1j * \
+                sqrt(3) * sqrt(q) * sinh(f)
             print("x1 = ", round(x1))
             print("x2 = ", round(x2))
             print("x3 = ", round(x3))
@@ -61,8 +64,10 @@ elif s < 0:
         f = (1 / 3) * asinh(abs(r) / sqrt(q**3))
         if r > 0:
             x1 = -2 * sqrt(abs(q)) * sinh(f) - a / 3
-            x2 = sqrt(abs(q)) * sinh(f) - a / 3  + 1j * sqrt(3) * sqrt(abs(q)) * cosh(f)
-            x3 = sqrt(abs(q)) * sinh(f) - a / 3  - 1j * sqrt(3) * sqrt(abs(q)) * cosh(f)
+            x2 = sqrt(abs(q)) * sinh(f) - a / 3 + 1j * \
+                sqrt(3) * sqrt(abs(q)) * cosh(f)
+            x3 = sqrt(abs(q)) * sinh(f) - a / 3 - 1j * \
+                sqrt(3) * sqrt(abs(q)) * cosh(f)
             print("x1 = ", round(x1))
             print("x2 = ", round(x2))
             print("x3 = ", round(x3))
@@ -86,8 +91,10 @@ elif s < 0:
     else:
         from cmath import sqrt
         x1 = -((c - (a * 3) / 27))**(1 / 3) - a / 3
-        x2 = (-a + x1) / 2 + 1j / 2 * sqrt(abs((a - 3 * x1) * (a + x1) - 4 * b))
-        x3 = x2 = (-a + x1) / 2 - 1j / 2 * sqrt(abs((a - 3 * x1) * (a + x1) - 4 * b))
+        x2 = (-a + x1) / 2 + 1j / 2 * \
+            sqrt(abs((a - 3 * x1) * (a + x1) - 4 * b))
+        x3 = x2 = (-a + x1) / 2 - 1j / 2 * \
+            sqrt(abs((a - 3 * x1) * (a + x1) - 4 * b))
         print("x1 = ", round(x1))
         print("x2 = ", round(x2))
         print("x3 = ", round(x3))
@@ -99,6 +106,6 @@ else:
     print("x2 = ", round(x2))
     res = str(round(x1)) + " " + str(round(x2))
 
-output.write(res) #виведення результату
-input.close() #закриття файлу з вхідними даними
-output.close() #закриття файлу з результатом
+output.write(res)  # виведення результату
+input.close()  # закриття файлу з вхідними даними
+output.close()  # закриття файлу з результатом
